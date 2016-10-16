@@ -304,7 +304,7 @@ class Component(object):
     """ Creates a docker container for this component and returns it. """
     command = self.getCommand()
     if not command:
-      fail('No command defined in either gantry config or docker image for component ' +
+      warn('No command defined in either gantry config or docker image for component ' +
            self.getName(), component=self)
 
     self.logger.debug('Starting container for component %s with command %s', self.getName(),
